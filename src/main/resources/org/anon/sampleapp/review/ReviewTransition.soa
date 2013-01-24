@@ -1,0 +1,10 @@
+name:       ReviewTransition
+type:       Transition
+flow:       ReviewFlow
+foreach:        ReviewObject|WriteReview
+actions:
+    - name:     writeReview
+      method:   createReview
+      foreach:  ReviewObject|WriteReview
+      from:     active
+      to:       active

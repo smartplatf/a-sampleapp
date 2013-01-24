@@ -1,0 +1,21 @@
+name:   ReviewFlow
+defaultEnable: all
+primeData:
+    - org.anon.sampleapp.review.ReviewObject
+data:
+    - org.anon.sampleapp.review.ReviewDetail
+events:
+    - org.anon.sampleapp.review.WriteReview
+responses:
+    - org.anon.sampleapp.review.BooleanResponse
+transitions:
+    - org.anon.sampleapp.review.ReviewTransition
+features:
+    - name: all
+      artefacts:
+        - org.anon.sampleapp.review.ReviewObject
+        - org.anon.sampleapp.review.ReviewDetail
+        - org.anon.sampleapp.review.WriteReview
+        - org.anon.sampleapp.review.BooleanResponse
+        - org.anon.sampleapp.review.ReviewTransition
+

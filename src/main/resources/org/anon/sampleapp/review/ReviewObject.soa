@@ -1,0 +1,12 @@
+name:   ReviewObject
+type:   PrimeData
+flow:   ReviewFlow
+attributes:
+    - attribute:    _objectID
+      type:         key
+states:
+    - name:         active
+      startState:   yes
+    - name:         inactive
+      endState:     yes
+

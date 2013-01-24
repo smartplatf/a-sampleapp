@@ -1,0 +1,12 @@
+name:   ReviewDetail
+type:   Data
+flow:   ReviewFlow
+attributes:
+    - attribute:    _detailID
+      type:         key
+states:
+    - name:         active
+      startState:   yes
+    - name:         inactive
+      endState:     yes
+
