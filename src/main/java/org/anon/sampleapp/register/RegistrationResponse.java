@@ -26,33 +26,28 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.review.ReviewTransition
+ * File:                org.anon.sampleapp.register.RegistrationResponse
  * Author:              rsankar
  * Revision:            1.0
- * Date:                24-01-2013
+ * Date:                02-04-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * A set of transitions for review events
+ * A response for registration
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.review;
+package org.anon.sampleapp.register;
 
-public class ReviewTransition
+public class RegistrationResponse implements java.io.Serializable
 {
-    public ReviewTransition()
-    {
-    }
+    private String message;
 
-    public BooleanResponse createReview(ReviewObject obj, WriteReview evt)
+    public RegistrationResponse(String msg)
     {
-        System.out.println("Created review");
-        ReviewDetail det = new ReviewDetail(obj.getName(), evt.getReview(), evt.getRating());
-        BooleanResponse resp = new BooleanResponse(true);
-        return resp;
+        message = msg;
     }
 }
 

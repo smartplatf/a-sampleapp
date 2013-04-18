@@ -1,0 +1,19 @@
+name:   ErrorCases
+defaultEnable: all
+primeData:
+    - org.anon.sampleapp.errorcases.ErrorObject
+    - org.anon.sampleapp.errorcases.AdditionalError
+events:
+    - org.anon.sampleapp.errorcases.ExceptionEvent
+responses:
+    - org.anon.sampleapp.errorcases.ExceptResponse
+transitions:
+    - org.anon.sampleapp.errorcases.ErrorManager
+features:
+    - name: all
+      artefacts:
+        - org.anon.sampleapp.errorcases.ErrorObject
+        - org.anon.sampleapp.errorcases.ExceptionEvent
+        - org.anon.sampleapp.errorcases.ExceptResponse
+        - org.anon.sampleapp.errorcases.ErrorManager
+        - org.anon.sampleapp.errorcases.AdditionalError

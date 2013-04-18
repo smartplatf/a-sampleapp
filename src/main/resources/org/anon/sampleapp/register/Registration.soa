@@ -1,8 +1,8 @@
-name:   ReviewObject
+name:   Registration
 type:   PrimeData
-flow:   ReviewFlow
+flow:   RegistrationFlow
 attributes:
-    - attribute:    _name
+    - attribute:    email
       type:         key
 states:
     - name:         active

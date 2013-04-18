@@ -1,8 +1,8 @@
-name:   ReviewObject
+name:   AdditionalError
 type:   PrimeData
-flow:   ReviewFlow
+flow:   ErrorCases
 attributes:
-    - attribute:    _name
+    - attribute:    name
       type:         key
 states:
     - name:         active

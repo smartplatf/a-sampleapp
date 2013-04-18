@@ -26,33 +26,35 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.review.ReviewTransition
+ * File:                org.anon.sampleapp.errorcases.EmbedError
  * Author:              rsankar
  * Revision:            1.0
- * Date:                24-01-2013
+ * Date:                04-04-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * A set of transitions for review events
+ * An embed into a hosted object
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.review;
+package org.anon.sampleapp.errorcases;
 
-public class ReviewTransition
+import java.util.Date;
+
+public class EmbedError implements java.io.Serializable
 {
-    public ReviewTransition()
+    private Date _start;
+
+    public EmbedError()
     {
+        _start = new Date();
     }
 
-    public BooleanResponse createReview(ReviewObject obj, WriteReview evt)
+    public String toString()
     {
-        System.out.println("Created review");
-        ReviewDetail det = new ReviewDetail(obj.getName(), evt.getReview(), evt.getRating());
-        BooleanResponse resp = new BooleanResponse(true);
-        return resp;
+        return ":" + _start;
     }
 }
 

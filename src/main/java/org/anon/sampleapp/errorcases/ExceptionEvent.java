@@ -26,33 +26,29 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.review.ReviewTransition
+ * File:                org.anon.sampleapp.errorcases.ExceptionEvent
  * Author:              rsankar
  * Revision:            1.0
- * Date:                24-01-2013
+ * Date:                03-04-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * A set of transitions for review events
+ * An event that throws exception
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.review;
+package org.anon.sampleapp.errorcases;
 
-public class ReviewTransition
+public class ExceptionEvent implements java.io.Serializable
 {
-    public ReviewTransition()
+    private String test;
+
+    public ExceptionEvent()
     {
     }
 
-    public BooleanResponse createReview(ReviewObject obj, WriteReview evt)
-    {
-        System.out.println("Created review");
-        ReviewDetail det = new ReviewDetail(obj.getName(), evt.getReview(), evt.getRating());
-        BooleanResponse resp = new BooleanResponse(true);
-        return resp;
-    }
+    public String testString() { return test; }
 }
 

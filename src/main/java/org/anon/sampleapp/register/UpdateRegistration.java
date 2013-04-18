@@ -26,33 +26,23 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.review.ReviewTransition
- * Author:              rsankar
+ * File:                org.anon.sampleapp.register.UpdateRegistration
+ * Author:              vjaasti
  * Revision:            1.0
- * Date:                24-01-2013
+ * Date:                Apr 12, 2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * A set of transitions for review events
+ * <Purpose>
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.review;
+package org.anon.sampleapp.register;
 
-public class ReviewTransition
-{
-    public ReviewTransition()
-    {
-    }
-
-    public BooleanResponse createReview(ReviewObject obj, WriteReview evt)
-    {
-        System.out.println("Created review");
-        ReviewDetail det = new ReviewDetail(obj.getName(), evt.getReview(), evt.getRating());
-        BooleanResponse resp = new BooleanResponse(true);
-        return resp;
-    }
+public class UpdateRegistration {
+	private String phone;
+	
+	public String getPhone() { return phone; }
 }
-

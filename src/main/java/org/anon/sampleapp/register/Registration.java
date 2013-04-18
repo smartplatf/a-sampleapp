@@ -26,33 +26,80 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.review.ReviewTransition
+ * File:                org.anon.sampleapp.register.Registration
  * Author:              rsankar
  * Revision:            1.0
- * Date:                24-01-2013
+ * Date:                02-04-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * A set of transitions for review events
+ * a register for interest
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.review;
+package org.anon.sampleapp.register;
 
-public class ReviewTransition
+import java.util.ArrayList;
+import java.util.List;
+
+public class Registration implements java.io.Serializable
 {
-    public ReviewTransition()
+    private String email;
+    private String phone;
+    private List<String> tags;
+    
+	public Registration(String e)
     {
+        email = e;
+        phone = "000";
+        tags = new ArrayList<String>();
+        setTags();
+    }
+    
+    public Registration(String e, String p)
+    {
+        email = e;
+        phone = p;
+        
+        tags = new ArrayList<String>();
+        setTags();
+    }
+    
+    public void setTags() {
+    	
+    			
+    	tags.add("DummyTag");
     }
 
-    public BooleanResponse createReview(ReviewObject obj, WriteReview evt)
-    {
-        System.out.println("Created review");
-        ReviewDetail det = new ReviewDetail(obj.getName(), evt.getReview(), evt.getRating());
-        BooleanResponse resp = new BooleanResponse(true);
-        return resp;
-    }
+    public String getEmail() { return email; }
+
+	public void setEmail(String newemail) {
+		email = newemail;
+	}
+	
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String p) {
+		this.phone = p;
+	}
+	
+	public String getTags() {
+		StringBuffer b = new StringBuffer();
+		for(String t : tags)
+		{
+			b.append("-");
+			b.append(t);
+		}
+		
+		return b.toString();
+	}
+	/*public String toString() {
+		return "Registration:"+email+":"+phone+":"+getTags();
+	}*/
+	
 }
 

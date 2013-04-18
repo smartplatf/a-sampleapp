@@ -45,14 +45,14 @@ import java.util.UUID;
 
 public class ReviewDetail implements java.io.Serializable
 {
-    private UUID _objectID;
     private UUID _detailID;
+    private String _objectName;
     private String _reviewText;
     private int _rating;
 
-    public ReviewDetail(UUID obj, String review, int rate)
+    public ReviewDetail(String obj, String review, int rate)
     {
-        _objectID = obj;
+        _objectName = obj;
         _detailID = UUID.randomUUID();
         _reviewText = review;
         _rating = rate;

@@ -1,0 +1,16 @@
+name:       RegisterManager
+type:       Transition
+flow:       RegistrationFlow
+foreach:        FlowAdmin|RegisterEvent,Registration|UpdateRegistration
+actions:
+    - name:     registerNew
+      method:   registerNew
+      foreach:  FlowAdmin|RegisterEvent
+      from:     active
+      to:       active
+    - name:     update
+      method:   update
+      foreach:  Registration|UpdateRegistration
+      from:     active
+      to:       active
+      

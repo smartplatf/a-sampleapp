@@ -1,0 +1,22 @@
+name:       ErrorManager
+type:       Transition
+flow:       ErrorCases
+foreach:        ErrorObject|ExceptionEvent,FlowAdmin|CreatePrime|AdditionalError
+actions:
+    - name:     throwexception
+      method:   throwexception
+      foreach:  ErrorObject|ExceptionEvent
+      from:     active
+      to:       active
+    - name:     successWithoutThrow
+      method:   successWithoutThrow
+      foreach:  ErrorObject|ExceptionEvent
+      from:     active
+      to:       active
+    - name:     addToAdditional
+      method:   addToAdditional
+      parms:    (txn.AdditionalError)
+      foreach:  FlowAdmin|CreatePrime|AdditionalError
+      runAfter: createPrimeData
+      from:     active
+      to:       active

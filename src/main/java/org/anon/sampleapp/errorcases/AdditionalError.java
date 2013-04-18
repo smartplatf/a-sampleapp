@@ -26,33 +26,44 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.review.ReviewTransition
+ * File:                org.anon.sampleapp.errorcases.AdditionalError
  * Author:              rsankar
  * Revision:            1.0
- * Date:                24-01-2013
+ * Date:                04-04-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * A set of transitions for review events
+ * An error which has an additional creation transition included
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.review;
+package org.anon.sampleapp.errorcases;
 
-public class ReviewTransition
+public class AdditionalError implements java.io.Serializable
 {
-    public ReviewTransition()
+    private String name;
+    private String additional;
+
+    public AdditionalError(String nm)
     {
+        name = nm;
     }
 
-    public BooleanResponse createReview(ReviewObject obj, WriteReview evt)
+    public String getName()
     {
-        System.out.println("Created review");
-        ReviewDetail det = new ReviewDetail(obj.getName(), evt.getReview(), evt.getRating());
-        BooleanResponse resp = new BooleanResponse(true);
-        return resp;
+        return name;
+    }
+
+    public void setupAdditional(String val)
+    {
+        additional = val;
+    }
+
+    public String toString()
+    {
+        return name + ":" + additional;
     }
 }
 

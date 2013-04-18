@@ -1,0 +1,22 @@
+name:   RegistrationFlow
+defaultEnable: all
+primeData:
+    - org.anon.sampleapp.register.Registration
+events:
+    - org.anon.sampleapp.register.RegisterEvent
+    - org.anon.sampleapp.register.UpdateRegistration
+responses:
+    - org.anon.sampleapp.register.RegistrationResponse
+    - org.anon.sampleapp.register.UpdateRegistrationResponse
+transitions:
+    - org.anon.sampleapp.register.RegisterManager
+features:
+    - name: all
+      artefacts:
+        - org.anon.sampleapp.register.Registration
+        - org.anon.sampleapp.register.RegisterEvent
+        - org.anon.sampleapp.register.UpdateRegistration
+        - org.anon.sampleapp.register.RegistrationResponse
+        - org.anon.sampleapp.register.UpdateRegistrationResponse
+        - org.anon.sampleapp.register.RegisterManager
+
