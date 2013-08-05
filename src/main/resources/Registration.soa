@@ -1,0 +1,26 @@
+name:   Registration
+defaultEnable: all
+primeData:
+    - org.anon.sampleapp.registration.RegisterRecord
+events:
+    - org.anon.sampleapp.registration.RegisterEvent
+    - org.anon.sampleapp.registration.MailerEvent
+    - org.anon.sampleapp.registration.ActivateUser
+    - org.anon.sampleapp.registration.CheckStatusEvent
+responses:
+    - org.anon.sampleapp.registration.RegistrationResponse
+    - org.anon.sampleapp.registration.CheckStatusResponse
+transitions:
+    - org.anon.sampleapp.registration.RegistrationManager
+features:
+    - name: all
+      artefacts:
+        - org.anon.sampleapp.registration.RegisterRecord
+        - org.anon.sampleapp.registration.RegisterEvent
+        - org.anon.sampleapp.registration.ActivateUser
+        - org.anon.sampleapp.registration.MailerEvent
+        - org.anon.sampleapp.registration.CheckStatusEvent
+        - org.anon.sampleapp.registration.RegistrationResponse
+        - org.anon.sampleapp.registration.CheckStatusResponse
+        - org.anon.sampleapp.registration.RegistrationManager
+

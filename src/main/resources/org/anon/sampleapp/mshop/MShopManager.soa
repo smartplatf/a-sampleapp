@@ -1,0 +1,10 @@
+name:       MShopManager
+type:       Transition
+flow:       MShop
+foreach:        MShop|AddShopItem
+actions:
+    - name:     addToMShop
+      method:   addToMShop
+      foreach:  MShop|AddShopItem
+      from:     active
+      to:       active

@@ -1,0 +1,32 @@
+name:   MShop
+defaultEnable: all
+primeData:
+    - org.anon.sampleapp.mshop.MShop
+data:
+    - org.anon.sampleapp.mshop.MShopItem
+keys:
+    - data: org.anon.sampleapp.mshop.MShop
+      key: cartName
+    - data: org.anon.sampleapp.mshop.MShopItem
+      key: itemID
+events:
+    - org.anon.sampleapp.mshop.AddShopItem
+responses:
+    - org.anon.sampleapp.mshop.AddedShop
+transitions:
+    - org.anon.sampleapp.mshop.MShopManager
+features:
+    - name: all
+      artefacts:
+        - org.anon.sampleapp.mshop.MShop
+        - org.anon.sampleapp.mshop.MShopItem
+        - org.anon.sampleapp.mshop.AddShopItem
+        - org.anon.sampleapp.mshop.AddedShop
+        - org.anon.sampleapp.mshop.MShopManager
+links:
+    - from: MShopItem.cartName(n)
+      to:   MShop.cartName
+needlinks:
+    - name: itemlink
+      from: MShopItem.shopItem
+      via: AddShopItem.shopItem

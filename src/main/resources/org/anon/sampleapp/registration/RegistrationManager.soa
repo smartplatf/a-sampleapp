@@ -1,0 +1,25 @@
+name:    RegistrationManager
+type:       Transition
+flow:       Registration
+foreach:        FlowAdmin|RegisterEvent,RegisterRecord|ActivateUser,RegisterRecord|MailerEvent,RegisterRecord|CheckStatusEvent
+actions:
+    - name:     registerNew
+      method:   registerUser
+      foreach:  FlowAdmin|RegisterEvent
+      from:     active
+      to:       active
+    - name:     activate
+      method:   activateUser
+      foreach:  RegisterRecord|ActivateUser
+      from:     active
+      to:       active    
+    - name:     sendMail
+      method:   sendVMail
+      foreach:  RegisterRecord|MailerEvent
+      from:     active
+      to:       active    
+    - name:     checkstatus
+      method:   checkStatus
+      foreach:  RegisterRecord|CheckStatusEvent
+      from:     active
+      to:       active  

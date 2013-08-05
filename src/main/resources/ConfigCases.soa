@@ -1,0 +1,24 @@
+name:   ConfigCases
+defaultEnable: all
+primeData:
+    - org.anon.sampleapp.configcases.DataObject
+config:
+    - org.anon.sampleapp.configcases.ConfigObject
+events:
+    - org.anon.sampleapp.configcases.ConfigParmEvent
+responses:
+    - org.anon.sampleapp.configcases.CfgResponse
+transitions:
+    - org.anon.sampleapp.configcases.ConfigParmTests
+keys:
+    - data: org.anon.sampleapp.configcases.DataObject
+      key: dataKey
+features:
+    - name: all
+      artefacts:
+        - org.anon.sampleapp.configcases.DataObject
+        - org.anon.sampleapp.configcases.ConfigObject
+        - org.anon.sampleapp.configcases.ConfigParmEvent
+        - org.anon.sampleapp.configcases.ConfigParmTests
+        - org.anon.sampleapp.configcases.CfgResponse 
+

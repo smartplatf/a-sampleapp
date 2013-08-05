@@ -1,7 +1,7 @@
 name:       RegisterManager
 type:       Transition
 flow:       RegistrationFlow
-foreach:        FlowAdmin|RegisterEvent,Registration|UpdateRegistration
+foreach:        FlowAdmin|RegisterEvent,Registration|UpdateRegistration,Registration|TrackUpdate
 actions:
     - name:     registerNew
       method:   registerNew
@@ -13,4 +13,8 @@ actions:
       foreach:  Registration|UpdateRegistration
       from:     active
       to:       active
-      
+    - name:     trackUpdate
+      method:   trackUpdate
+      foreach:  Registration|TrackUpdate
+      from:     active
+      to:       active      

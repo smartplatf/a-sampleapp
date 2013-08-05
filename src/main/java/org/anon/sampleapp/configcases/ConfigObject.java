@@ -26,40 +26,36 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.register.RegisterEvent
+ * File:                org.anon.sampleapp.configcases.ConfigObject
  * Author:              rsankar
  * Revision:            1.0
- * Date:                02-04-2013
+ * Date:                06-05-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An event to register
+ * A configuration object to be created
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.register;
+package org.anon.sampleapp.configcases;
 
-import java.util.List;
-public class RegisterEvent implements java.io.Serializable
+public final class ConfigObject implements java.io.Serializable
 {
-    private String email;
-    private String phone;
-    private int age;
-    private double weight;
-    private List<Byte> password;
-    private Long salary;
+    private final int oneConfig;
+    private final int twoConfig;
+    private final String oneString;
 
-    public RegisterEvent()
+    public ConfigObject()
     {
+        oneConfig = 0;
+        twoConfig = 1;
+        oneString = "oneString";
     }
 
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-    public int getAge() { return age; }
-    public double getWeight() { return weight; }
-    public List<Byte> getPassword() { return password; }
-    public Long getSalary() { return salary; }
+    public int getOneConfig() { return oneConfig; }
+    public int getTwoConfig() { return twoConfig; }
+    public String getOneString() { return oneString; }
 }
 

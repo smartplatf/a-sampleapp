@@ -1,0 +1,10 @@
+name:       ConfigParmTests
+type:       Transition
+flow:       ConfigCases
+foreach:        DataObject|ConfigParmEvent
+actions:
+    - name:     testConfigParm1
+      method:   testConfigParm1
+      foreach:  DataObject|ConfigParmEvent
+      from:     active
+      to:       active

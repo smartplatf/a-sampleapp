@@ -1,0 +1,15 @@
+name:       ShoppingCartManager
+type:       Transition
+flow:       ShoppingCart
+foreach:        ShoppingCart|AddCartItem,ShoppingCart|GetShoppingCart
+actions:
+    - name:     addToShoppingCart
+      method:   addToShoppingCart
+      foreach:  ShoppingCart|AddCartItem
+      from:     active
+      to:       active
+    - name:     retrieveShoppingCartDetails
+      method:   retrieveShoppingCartDetails
+      foreach:  ShoppingCart|GetShoppingCart
+      from:     active
+      to:       active

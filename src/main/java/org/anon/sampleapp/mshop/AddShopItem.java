@@ -26,40 +26,31 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.register.RegisterEvent
+ * File:                org.anon.sampleapp.mshop.AddShopItem
  * Author:              rsankar
  * Revision:            1.0
- * Date:                02-04-2013
+ * Date:                18-05-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An event to register
+ * Add an item to the shopping cart
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.register;
+package org.anon.sampleapp.mshop;
 
-import java.util.List;
-public class RegisterEvent implements java.io.Serializable
+public class AddShopItem implements java.io.Serializable
 {
-    private String email;
-    private String phone;
-    private int age;
-    private double weight;
-    private List<Byte> password;
-    private Long salary;
+    private Object shopItem;
+    private double cost;
 
-    public RegisterEvent()
+    public AddShopItem()
     {
     }
 
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-    public int getAge() { return age; }
-    public double getWeight() { return weight; }
-    public List<Byte> getPassword() { return password; }
-    public Long getSalary() { return salary; }
+    public Object getShopItem() { return shopItem; }
+    public double getCost() { return cost; }
 }
 

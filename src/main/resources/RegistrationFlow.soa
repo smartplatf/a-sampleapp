@@ -5,6 +5,7 @@ primeData:
 events:
     - org.anon.sampleapp.register.RegisterEvent
     - org.anon.sampleapp.register.UpdateRegistration
+    - org.anon.sampleapp.register.TrackUpdate
 responses:
     - org.anon.sampleapp.register.RegistrationResponse
     - org.anon.sampleapp.register.UpdateRegistrationResponse
@@ -16,6 +17,7 @@ features:
         - org.anon.sampleapp.register.Registration
         - org.anon.sampleapp.register.RegisterEvent
         - org.anon.sampleapp.register.UpdateRegistration
+        - org.anon.sampleapp.register.TrackUpdate
         - org.anon.sampleapp.register.RegistrationResponse
         - org.anon.sampleapp.register.UpdateRegistrationResponse
         - org.anon.sampleapp.register.RegisterManager

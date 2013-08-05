@@ -1,0 +1,14 @@
+name:   RegisterRecord
+type:   PrimeData
+flow:   Registration
+attributes:
+    - attribute:    email
+      type:         key
+    - attribute:    randomCode
+      type:         key
+    - attribute:    tenantId
+      type:         key
+states:
+    - name:         active
+      startState:   true
+    - name:         inactive

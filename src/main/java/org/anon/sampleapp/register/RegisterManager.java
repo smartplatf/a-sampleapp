@@ -70,6 +70,10 @@ public class RegisterManager
         {
             Registration reg = new Registration(evt.getEmail());
             reg.setPhone(evt.getPhone());
+	    /*reg.setAge(evt.getAge());
+	    reg.setWeight(evt.getWeight());
+	    reg.setPassword(evt.getPassword());
+	    reg.setSalary(evt.getSalary());*/
             resp = new RegistrationResponse("Registered: " + evt.getEmail());
         }
         else
@@ -88,6 +92,8 @@ public class RegisterManager
     		reg.setPhone(event.getPhone());
     		System.out.println("Updated Phone:"+reg+":::"+reg.getPhone());
     		resp = new UpdateRegistrationResponse("Updated Registration: " + event.getPhone());
+    		
+    		TrackUpdate tracker = new TrackUpdate(reg);
         }
         else
         {
@@ -96,6 +102,12 @@ public class RegisterManager
     	System.out.println("-------------UPDATED REGISTRATION------------------");
     }
 
+    public void trackUpdate(Registration reg, TrackUpdate event)
+    {
+    	System.out.println("-----------------------INTERNAL EVENT--------------------------");
+    	System.out.println("------------------ PHONE:"+reg.getPhone()+":::"+event.getRegistration()+"::"+event.getEventName());
+    	reg.setPhone("+918041085750");
+    }
 	private boolean isValidPhone(String phone) {
 		if(phone != null)
 			return true;

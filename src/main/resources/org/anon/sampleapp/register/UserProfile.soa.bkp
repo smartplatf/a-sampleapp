@@ -1,0 +1,12 @@
+name:   UserProfile
+type:   PrimeData
+flow:   RegistrationFlow
+attributes:
+    - attribute:    mobileNumber
+      type:         key
+states:
+    - name:       active
+      startState: true
+    - name:       inactive
+      endState:   true
+

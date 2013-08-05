@@ -26,40 +26,64 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.register.RegisterEvent
- * Author:              rsankar
+ * File:                org.anon.sampleapp.registration.RegisterRecord
+ * Author:              arjun
  * Revision:            1.0
- * Date:                02-04-2013
+ * Date:                27-06-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An event to register
+ * record of registrations
  *
  * ************************************************************
  * */
+package org.anon.sampleapp.registration;
 
-package org.anon.sampleapp.register;
+import java.io.Serializable;
+import java.util.UUID;
 
-import java.util.List;
-public class RegisterEvent implements java.io.Serializable
-{
-    private String email;
-    private String phone;
-    private int age;
-    private double weight;
-    private List<Byte> password;
-    private Long salary;
+public class RegisterRecord implements Serializable {
+	
+	private String email;
+	private String randomCode;
+	private String tenantId;
+	private boolean status = false;
+	
+	public RegisterRecord() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public boolean isStatus() {
+		return status;
+	}
 
-    public RegisterEvent()
-    {
-    }
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-    public int getAge() { return age; }
-    public double getWeight() { return weight; }
-    public List<Byte> getPassword() { return password; }
-    public Long getSalary() { return salary; }
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getRandomCode() {
+		return randomCode;
+	}
+
+	public void setRandomCode(String randomCode) {
+		this.randomCode = randomCode;
+	}
+
+	public String getTenantId() {
+		return tenantId;
+	}
+
+	public void setTenantId(String tenantId) {
+		this.tenantId = tenantId;
+	}	
+
 }
-

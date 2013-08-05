@@ -26,40 +26,31 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.register.RegisterEvent
- * Author:              rsankar
+ * File:                org.anon.sampleapp.register.TrackUpdate
+ * Author:              vjaasti
  * Revision:            1.0
- * Date:                02-04-2013
+ * Date:                May 5, 2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An event to register
+ * <Purpose>
  *
  * ************************************************************
  * */
 
 package org.anon.sampleapp.register;
 
-import java.util.List;
-public class RegisterEvent implements java.io.Serializable
+public class TrackUpdate implements java.io.Serializable
 {
-    private String email;
-    private String phone;
-    private int age;
-    private double weight;
-    private List<Byte> password;
-    private Long salary;
+	private Registration _reg;
+	private String eventName;
+	public TrackUpdate(Registration reg)
+	{
+		_reg = reg;
+		eventName = "TrackUpdate";
+	}
 
-    public RegisterEvent()
-    {
-    }
-
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-    public int getAge() { return age; }
-    public double getWeight() { return weight; }
-    public List<Byte> getPassword() { return password; }
-    public Long getSalary() { return salary; }
+	public Registration getRegistration() { return _reg; }
+	public String getEventName() { return eventName; }
 }
-

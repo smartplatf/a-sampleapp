@@ -26,40 +26,41 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.register.RegisterEvent
+ * File:                org.anon.sampleapp.shoppingcart.CartItem
  * Author:              rsankar
  * Revision:            1.0
- * Date:                02-04-2013
+ * Date:                17-05-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An event to register
+ * A cart item which is added to the shopping cart
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.register;
+package org.anon.sampleapp.shoppingcart;
 
-import java.util.List;
-public class RegisterEvent implements java.io.Serializable
+import java.util.UUID;
+
+public class CartItem implements java.io.Serializable
 {
-    private String email;
-    private String phone;
-    private int age;
-    private double weight;
-    private List<Byte> password;
-    private Long salary;
+    public String cartName;
+    public UUID itemID;
+    public String skuId;
+    public double cost;
 
-    public RegisterEvent()
+    public CartItem(String cart, String sku, double c)
     {
+        cartName = cart;
+        itemID = UUID.randomUUID();
+        skuId = sku;
+        cost = cost;
     }
 
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-    public int getAge() { return age; }
-    public double getWeight() { return weight; }
-    public List<Byte> getPassword() { return password; }
-    public Long getSalary() { return salary; }
+    public String getCartName() { return cartName; }
+    public UUID getItemID() { return itemID; }
+    public String getSkuID() { return skuId; }
+    public double getCost() { return cost; }
 }
 

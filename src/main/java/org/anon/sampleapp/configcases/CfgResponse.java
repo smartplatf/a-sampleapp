@@ -26,40 +26,28 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.register.RegisterEvent
+ * File:                org.anon.sampleapp.configcases.CfgResponse
  * Author:              rsankar
  * Revision:            1.0
- * Date:                02-04-2013
+ * Date:                06-05-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An event to register
+ * A response for cfg
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.register;
+package org.anon.sampleapp.configcases;
 
-import java.util.List;
-public class RegisterEvent implements java.io.Serializable
+public class CfgResponse
 {
-    private String email;
-    private String phone;
-    private int age;
-    private double weight;
-    private List<Byte> password;
-    private Long salary;
+    private String response;
 
-    public RegisterEvent()
+    public CfgResponse(String val)
     {
+        response = val;
     }
-
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-    public int getAge() { return age; }
-    public double getWeight() { return weight; }
-    public List<Byte> getPassword() { return password; }
-    public Long getSalary() { return salary; }
 }
 

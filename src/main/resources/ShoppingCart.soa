@@ -1,0 +1,33 @@
+name:   ShoppingCart
+defaultEnable: all
+primeData:
+    - org.anon.sampleapp.shoppingcart.ShoppingCart
+data:
+    - org.anon.sampleapp.shoppingcart.CartItem
+keys:
+    - data: org.anon.sampleapp.shoppingcart.ShoppingCart
+      key: cartName
+    - data: org.anon.sampleapp.shoppingcart.CartItem
+      key: itemID
+events:
+    - org.anon.sampleapp.shoppingcart.AddCartItem
+    - org.anon.sampleapp.shoppingcart.GetShoppingCart
+responses:
+    - org.anon.sampleapp.shoppingcart.AddedCart
+    - org.anon.sampleapp.shoppingcart.ShoppingCartDetails
+transitions:
+    - org.anon.sampleapp.shoppingcart.ShoppingCartManager
+features:
+    - name: all
+      artefacts:
+        - org.anon.sampleapp.shoppingcart.ShoppingCart
+        - org.anon.sampleapp.shoppingcart.CartItem
+        - org.anon.sampleapp.shoppingcart.AddCartItem
+        - org.anon.sampleapp.shoppingcart.GetShoppingCart
+        - org.anon.sampleapp.shoppingcart.AddedCart
+        - org.anon.sampleapp.shoppingcart.ShoppingCartDetails
+        - org.anon.sampleapp.shoppingcart.ShoppingCartManager
+links:
+    - from: CartItem.cartName(n)
+      to:   ShoppingCart.cartName
+

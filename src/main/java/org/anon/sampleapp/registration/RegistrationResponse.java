@@ -26,40 +26,56 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.register.RegisterEvent
- * Author:              rsankar
+ * File:                org.anon.sampleapp.registration.RegistrationResponse
+ * Author:              arjun
  * Revision:            1.0
- * Date:                02-04-2013
+ * Date:                27-06-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An event to register
+ * A response for registration
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.register;
+package org.anon.sampleapp.registration;
 
-import java.util.List;
-public class RegisterEvent implements java.io.Serializable
-{
-    private String email;
-    private String phone;
-    private int age;
-    private double weight;
-    private List<Byte> password;
-    private Long salary;
+import java.io.Serializable;
+import java.util.UUID;
 
-    public RegisterEvent()
-    {
-    }
+public class RegistrationResponse implements Serializable {
+	
+	private boolean status;
+	private String message;
+	private UUID random;
 
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-    public int getAge() { return age; }
-    public double getWeight() { return weight; }
-    public List<Byte> getPassword() { return password; }
-    public Long getSalary() { return salary; }
+	public RegistrationResponse() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public RegistrationResponse(boolean status) {
+		super();
+		this.status = status;
+	}
+
+	public RegistrationResponse(boolean status, UUID random) {
+		super();
+		this.status = status;
+		this.random = random;
+	}
+
+	public RegistrationResponse(boolean status, String message, UUID random) {
+		super();
+		this.status = status;
+		this.message = message;
+		this.random = random;
+	}
+
+	public RegistrationResponse(boolean status, String message) {
+		super();
+		this.status = status;
+		this.message = message;
+	}
+
 }
-

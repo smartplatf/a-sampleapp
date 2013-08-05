@@ -1,0 +1,12 @@
+name:   Catalogue
+defaultEnable: all
+primeData:
+    - org.anon.sampleapp.catalogue.CatalogueItem
+keys:
+    - data: org.anon.sampleapp.catalogue.CatalogueItem
+      key:  skuID
+features:
+    - name: all
+      artefacts:
+        - org.anon.sampleapp.catalogue.CatalogueItem
+

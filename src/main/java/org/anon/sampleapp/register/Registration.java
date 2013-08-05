@@ -49,13 +49,33 @@ public class Registration implements java.io.Serializable
     private String email;
     private String phone;
     private List<String> tags;
+    private static final int finalInt = 100;
+    /*private List<String> emptyStringList;
+    private List<Integer> emptyIntList;*/
     
-	public Registration(String e)
+    //private List<Byte> password;
+    
+    //private Credential pwd;
+    private int age;
+    private double weight;
+    private Long salary;
+    private UserProfile profile;
+    
+    public Registration(String e)
     {
         email = e;
         phone = "000";
         tags = new ArrayList<String>();
         setTags();
+        /*emptyStringList = new ArrayList<String>();
+        emptyIntList = new ArrayList<Integer>();*/
+        
+	age = 29;
+	weight = 75.0;
+	/*password = new ArrayList<Byte>();
+	password.add(new Byte("65"));
+	pwd = new Password();*/
+	salary = new Long(10000);
     }
     
     public Registration(String e, String p)
@@ -65,6 +85,8 @@ public class Registration implements java.io.Serializable
         
         tags = new ArrayList<String>();
         setTags();
+	age = 30;
+	weight = 75.0;
     }
     
     public void setTags() {
@@ -86,9 +108,26 @@ public class Registration implements java.io.Serializable
 	public void setPhone(String p) {
 		this.phone = p;
 	}
+    public void setAge(int a)
+	{
+		age = a;
+	}
+	public void setWeight(double w)
+	{
+		weight = w;
+	}
+	/*public void setPassword(List<Byte> pwd)
+	{
+		password = pwd;
+	}*/
+	
+	public void setSalary(Long sal)
+	{
+		salary = sal;
+	}
 	
 	public String getTags() {
-		StringBuffer b = new StringBuffer();
+		/*StringBuffer b = new StringBuffer();
 		for(String t : tags)
 		{
 			b.append("-");
@@ -96,10 +135,21 @@ public class Registration implements java.io.Serializable
 		}
 		
 		return b.toString();
+		*/
+		return ""+tags;
 	}
 	/*public String toString() {
-		return "Registration:"+email+":"+phone+":"+getTags();
+		return "Registration------->:"+email+":"+phone+":"+getTags()+": age:"+age+
+				": weight: "+weight+" pwd:" + password+":: another pwd:"+pwd
+					+ ": Salary:"+salary+":: emptyStrList:"+emptyStringList+":: emptyIntList:"+emptyIntList;
 	}*/
+	
+	public String toString() {
+		return "Registration------->:"+email+":"+phone+":"+getTags()+": age:"+
+				": weight: "+" pwd:"
+				+ ": Salary:" + 
+				"Profile: "+ profile;
+	}
 	
 }
 

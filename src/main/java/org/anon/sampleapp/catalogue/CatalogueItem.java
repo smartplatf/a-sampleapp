@@ -26,40 +26,37 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.register.RegisterEvent
+ * File:                org.anon.sampleapp.catalogue.CatalogueItem
  * Author:              rsankar
  * Revision:            1.0
- * Date:                02-04-2013
+ * Date:                28-05-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An event to register
+ * An item in the catalogue
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.register;
+package org.anon.sampleapp.catalogue;
 
-import java.util.List;
-public class RegisterEvent implements java.io.Serializable
+public class CatalogueItem implements java.io.Serializable
 {
-    private String email;
-    private String phone;
-    private int age;
-    private double weight;
-    private List<Byte> password;
-    private Long salary;
+    private String skuID;
+    private String itemName;
+    private String itemDescription;
+    private float itemCost;
+    private int itemQuantity;
 
-    public RegisterEvent()
+    public CatalogueItem()
     {
     }
 
-    public String getEmail() { return email; }
-    public String getPhone() { return phone; }
-    public int getAge() { return age; }
-    public double getWeight() { return weight; }
-    public List<Byte> getPassword() { return password; }
-    public Long getSalary() { return salary; }
+    public String getSkuID() { return skuID; }
+    public String getItemName() { return itemName; }
+    public String getItemDescription() { return itemDescription; }
+    public float getItemCost() { return itemCost; }
+    public int getItemQuantity() { return itemQuantity; }
 }
 
