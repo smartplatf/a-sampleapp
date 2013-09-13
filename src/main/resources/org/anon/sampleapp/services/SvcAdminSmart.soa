@@ -1,0 +1,19 @@
+name:       SvcAdminSmart
+type:       Transition
+flow:       Services
+foreach:        SvcTenant|ConvertTenant
+actions:
+    - name:     convertToTenant
+      method:   convertToTenant
+      foreach:  SvcTenant|ConvertTenant
+      from:     active
+      to:       active
+callservices:
+    - name:     changeState
+      service:  AdminSmartFlow.SmartTenantManager.enableFlowService
+      parms:    (data.name, data.domain, data.clientOf, event.enableFlow, event.features)
+      runAfter: convertToTenant
+      foreach:  SvcTenant|ConvertTenant
+      from:     active
+      to:       active
+

@@ -26,48 +26,27 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.errorcases.AdditionalError
+ * File:                org.anon.sampleapp.services.SvcAdminSmart
  * Author:              rsankar
  * Revision:            1.0
- * Date:                04-04-2013
+ * Date:                20-08-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An error which has an additional creation transition included
+ * A service caller
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.errorcases;
+package org.anon.sampleapp.services;
 
-import java.util.List;
-
-public class AdditionalError implements java.io.Serializable
+public class SvcAdminSmart
 {
-    private String name;
-    private String additional;
-    private List<String> lstfld;
-    private List<SubAdd> subfld;
-
-    public AdditionalError(String nm)
+    public void convertToTenant(ConvertTenant evt, SvcTenant tenant)
     {
-        name = nm;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setupAdditional(String val)
-    {
-        additional = val;
-    }
-
-    public String toString()
-    {
-        return name + ":" + additional;
+        System.out.println("called convert.");
+        new SvcResponse("called.");
     }
 }
 

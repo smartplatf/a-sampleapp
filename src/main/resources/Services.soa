@@ -1,0 +1,20 @@
+name:   Services
+defaultEnable: all
+primeData:
+    - org.anon.sampleapp.services.SvcTenant
+events:
+    - org.anon.sampleapp.services.ConvertTenant
+responses:
+    - org.anon.sampleapp.services.SvcResponse
+transitions:
+    - org.anon.sampleapp.services.SvcAdminSmart
+keys:
+    - data: org.anon.sampleapp.services.SvcTenant
+      key:  name
+features:
+    - name: all
+      artefacts:
+        - org.anon.sampleapp.services.SvcTenant
+        - org.anon.sampleapp.services.ConvertTenant
+        - org.anon.sampleapp.services.SvcAdminSmart
+        - org.anon.sampleapp.services.SvcResponse

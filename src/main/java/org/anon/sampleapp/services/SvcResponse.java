@@ -26,48 +26,27 @@
  * ************************************************************
  * HEADERS
  * ************************************************************
- * File:                org.anon.sampleapp.errorcases.AdditionalError
+ * File:                org.anon.sampleapp.services.SvcResponse
  * Author:              rsankar
  * Revision:            1.0
- * Date:                04-04-2013
+ * Date:                20-08-2013
  *
  * ************************************************************
  * REVISIONS
  * ************************************************************
- * An error which has an additional creation transition included
+ * A response for service
  *
  * ************************************************************
  * */
 
-package org.anon.sampleapp.errorcases;
+package org.anon.sampleapp.services;
 
-import java.util.List;
-
-public class AdditionalError implements java.io.Serializable
+public class SvcResponse implements java.io.Serializable
 {
-    private String name;
-    private String additional;
-    private List<String> lstfld;
-    private List<SubAdd> subfld;
-
-    public AdditionalError(String nm)
+    private String respond;
+    public SvcResponse(String resp)
     {
-        name = nm;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setupAdditional(String val)
-    {
-        additional = val;
-    }
-
-    public String toString()
-    {
-        return name + ":" + additional;
+        respond = resp;
     }
 }
 
