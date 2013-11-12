@@ -59,7 +59,7 @@ public class Registration implements java.io.Serializable
     private int age;
     private double weight;
     private Long salary;
-    private UserProfile profile;
+    //private UserProfile profile;
     
     public Registration(String e)
     {
@@ -147,8 +147,8 @@ public class Registration implements java.io.Serializable
 	public String toString() {
 		return "Registration------->:"+email+":"+phone+":"+getTags()+": age:"+
 				": weight: "+" pwd:"
-				+ ": Salary:" + 
-				"Profile: "+ profile;
+				+ ": Salary:";
+				//"Profile: "+ profile;
 	}
 	
 }

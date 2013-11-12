@@ -1,7 +1,7 @@
 name:       ErrorManager
 type:       Transition
 flow:       ErrorCases
-foreach:        ErrorObject|ExceptionEvent,FlowAdmin|CreatePrime|AdditionalError
+foreach:        ErrorObject|ExceptionEvent,FlowAdmin|CreatePrime|AdditionalError,ErrorObject|TimedEvent
 actions:
     - name:     throwexception
       method:   throwexception
@@ -20,3 +20,11 @@ actions:
       runAfter: createPrimeData
       from:     active
       to:       active
+callservices:
+    - name:      changestate
+      service:   AllFlows.TransitionServices.changeState
+      foreach:   ErrorObject|TimedEvent
+      from:      active
+      to:        inactive
+
+      
